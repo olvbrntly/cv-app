@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './About.css'
+import ResumeAbout from "./resume-components/ResumeAbout";
 
 class About extends Component {
 
@@ -85,6 +86,7 @@ class About extends Component {
           </div>
           <button type="submit">Submit!</button>
         </form>
+        <ResumeAbout firstName={this.state.firstName}/>
       </div>
     )
   }

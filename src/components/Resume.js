@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import ResumeAbout from "./resume-components/ResumeAbout";
 
 class Resume extends Component {
   render() {
     return (
       <div className="resume-div">
         <p>This is the Resume</p>
+        <ResumeAbout />
       </div>
     )
   }

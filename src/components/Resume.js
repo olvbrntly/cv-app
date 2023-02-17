@@ -11,3 +11,10 @@ class Resume extends Component {
 }
 
 export default Resume
+
+//resume div
+    //header div
+    //body div
+        //education div
+        //experience div
+    //footer div(skills)

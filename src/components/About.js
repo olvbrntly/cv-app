@@ -1,60 +1,31 @@
 import React, { Component } from "react";
 import './About.css'
-import ResumeAbout from "./resume-components/ResumeAbout";
 
 class About extends Component {
 
   constructor(){
     super()
-
     this.state = {
-    
         firstName:'',
         lastName:'',
         email:'',
         phone:'',
         linkedIn:'',
-      
     }
   }
-  handleFirstNameChange = (e) =>{
-    this.setState({
-      firstName : e.target.value,
-    })
-  }
 
-  handleLastNameChange = (e) =>{
+  handleChange = (e) => {
+    const value = e.target.value;
     this.setState({
-      lastName : e.target.value,
-    })
-  }
-
-  handleEmailChange = (e) =>{
-    this.setState({
-      email : e.target.value,
-    })
-  }
-
-  handlePhoneChange = (e) =>{
-    this.setState({
-      phone : e.target.value,
-    })
-  }
-
-  handleLinkedInChange = (e) =>{
-    this.setState({
-      linkedIn : e.target.value,
+      ...this.state,
+      [e.target.name]:value
     })
   }
 
   onSubmitForm = (e) =>{
+    const {firstName, lastName, email, phone, linkedIn } = this.state
+    this.props.parentCallback(firstName, lastName, email, phone, linkedIn);
     e.preventDefault();
-    console.log(this.state.firstName)
-    console.log(this.state.lastName)
-    console.log(this.state.email)
-    console.log(this.state.phone)
-    console.log(this.state.linkedIn)
-
   }
 
   render() {
@@ -65,28 +36,37 @@ class About extends Component {
           <div className="About-input">
             <input type="text" 
                    placeholder="First Name"
-                   onChange={this.handleFirstNameChange}/>
+                   name="firstName"
+                   value={this.state.firstName}
+                   onChange={this.handleChange}/>
 
             <input type="text" 
                    placeholder="Last Name" 
-                   onChange={this.handleLastNameChange}/>
+                   name="lastName"
+                   value={this.state.lastName}
+                   onChange={this.handleChange}/>
 
             <input type="email" 
                    placeholder="you@email.com"
-                   onChange={this.handleEmailChange}/>
+                   name="email"
+                   value={this.state.email}
+                   onChange={this.handleChange}/>
 
             <input type="tel" 
                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
                    placeholder="000-000-0000"
-                   onChange={this.handlePhoneChange}/>
+                   name="phone"
+                   value={this.state.phone}
+                   onChange={this.handleChange}/>
 
             <input type="text" 
                    placeholder="LinkedIn"
-                   onChange={this.handleLinkedInChange}/>
+                   name="linkedIn"
+                   value={this.state.linkedIn}
+                   onChange={this.handleChange}/>
           </div>
           <button type="submit">Submit!</button>
         </form>
-        <ResumeAbout firstName={this.state.firstName}/>
       </div>
     )
   }

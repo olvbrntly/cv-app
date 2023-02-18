@@ -2,3 +2,17 @@
     display:grid;
     grid-template-columns: 1fr 1.5fr
 }
+
+.left-app{
+    display:flex;
+    flex-direction: column;
+    padding-left:20px;
+    
+}
+
+.right-app{
+    border:2px solid red;
+    margin:2em 6.5em 2em 6.5em;
+    height:782px;
+    width:600px;
+}

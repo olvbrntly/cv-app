@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import About from "./About";
 import Education from "./Education";
 import Experience from "./Experience";
-import Resume from "./Resume";
+import ResumeAbout from "./ResumeAbout";
+
 
 class Main extends Component{
 
@@ -10,35 +11,50 @@ class Main extends Component{
       super()
 
       this.state = {
-        about:{
+         about:{
           firstName:'',
           lastName:'',
           email:'',
           phone:'',
           linkedIn:'',
-        },
-        education:{
-          institution:'',
+         },
+        // education:{
+        //   institution:'',
 
-        },
-        experience:{
-          title:'',
-        }
+        // },
+        // experience:{
+        //   title:'',
+        // } 
+    }
 
+    }
+
+    handleCallback = ( fname, lname, email,phone, linkedIn) => {
+      this.setState({
+          about:{
+            firstName: fname,
+            lastName: lname,
+            email: email,
+            phone:phone,
+            linkedIn: linkedIn,
+          }
+
+        });
       
     }
-    }
-    render(){
+  render(){
+      
         return(
             <div className="full-app">
             <div className="left-app">
               <h1>Resume Generator</h1>
-              <About/>
+              <About parentCallback = {this.handleCallback} />
               <Experience/>
               <Education/> 
             </div>
             <div className="right-app">
-              <Resume/>
+              <ResumeAbout about = {this.state.about}/>
+
             </div>
           </div>
         )

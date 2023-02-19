@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './About.css'
+import './styles/About.css'
 
 class About extends Component {
 
@@ -24,7 +24,7 @@ class About extends Component {
 
   onSubmitForm = (e) =>{
     const {firstName, lastName, email, phone, linkedIn } = this.state
-    this.props.parentCallback(firstName, lastName, email, phone, linkedIn);
+    this.props.aboutParentCallback(firstName, lastName, email, phone, linkedIn);
     e.preventDefault();
   }
 

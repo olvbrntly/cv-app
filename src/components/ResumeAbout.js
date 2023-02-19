@@ -1,17 +1,23 @@
 import React, { Component } from "react";
+import './styles/ResumeAbout.css'
 
 class ResumeAbout extends Component{
     render(){
      const { about } = this.props
     return(
-    <div>
-        <div>Welcome to the resume about section!</div>
-        <div> First name : {about.firstName} </div>
-        <div> Last name: {about.lastName}</div>
-        <div> Email: {about.email}</div>
-        <div> Phone Number: {about.phone}</div>
-        <div> LinkedIn: {about.linkedIn}</div>
+    <div className="resume-personal-info">
+        <div className="full-name">
+            <div className="f-name-resume">{about.firstName} </div>
+            <div className="l-name-resume">{about.lastName}</div>
+        </div>
 
+        <div className="bar-deco"> </div>
+
+        <div className="info">
+            <div className="email-resume">&#x2022; {about.email}  </div>
+            <div className="phone-number-resume">&#x2022; {about.phone}</div>
+            <div className="linkedin-resume">&#x2022; {about.linkedIn}</div>
+        </div>
         
     </div>
     )

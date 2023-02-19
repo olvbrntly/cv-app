@@ -1,6 +1,6 @@
 .full-app{
     display:grid;
-    grid-template-columns: 1fr 1.5fr
+    grid-template-columns: 1fr 1.5fr;
 }
 
 .left-app{
@@ -11,8 +11,12 @@
 }
 
 .right-app{
-    border:2px solid red;
+    border:2px solid rgb(0, 0, 0);
     margin:2em 6.5em 2em 6.5em;
     height:782px;
     width:600px;
+}
+
+.resume-about-div{
+   height:10%;
 }

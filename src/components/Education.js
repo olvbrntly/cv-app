@@ -1,8 +1,15 @@
 import React, { Component } from "react";
-import './Education.css'
+import './styles/Education.css'
 
 
 class Education extends Component {
+  constructor(){
+    super()
+
+    this.state = {
+      
+    }
+  }
   render() {
     return (
       <div className="Education-form-div">
